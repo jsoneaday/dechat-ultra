@@ -1,0 +1,13 @@
+{
+  "name": "dechat-ultra",
+  "packageManager": "yarn@3.4.1",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "wc:dev": "cd packages/webclient && yarn run dev"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
