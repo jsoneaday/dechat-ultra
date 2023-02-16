@@ -5,7 +5,9 @@
     "packages/*"
   ],
   "scripts": {
-    "wc:dev": "cd packages/webclient && yarn run dev"
+    "wc:dev": "cd packages/webclient && yarn run dev",
+    "nc:tauri": "cd packages/nativeclient && yarn run tauri dev",
+    "nc:build": "cd packages/nativeclient && yarn run build"
   },
   "devDependencies": {
     "typescript": "^4.9.5"
