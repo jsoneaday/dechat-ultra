@@ -60,10 +60,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 1024,
         "resizable": true,
         "title": "nativeclient",
-        "width": 800
+        "width": 1280
       }
     ]
   }
