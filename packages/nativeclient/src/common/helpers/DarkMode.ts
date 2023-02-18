@@ -3,19 +3,27 @@ export enum DarkMode {
   Dark = "dark",
 }
 
-export function setDarkMode(darkMode: DarkMode) {
+export function setDarkMode(darkMode: DarkMode = DarkMode.Light) {
+  const root = document.querySelector(":root");
   if (darkMode === DarkMode.Dark) {
-    document.documentElement.classList.add(DarkMode.Dark);
-    document.documentElement.classList.remove(DarkMode.Light);
+    root?.classList.remove(DarkMode.Light);
+    root?.classList.add(DarkMode.Dark);
   } else {
-    document.documentElement.classList.add(DarkMode.Light);
-    document.documentElement.classList.remove(DarkMode.Dark);
+    root?.classList.remove(DarkMode.Dark);
+    root?.classList.add(DarkMode.Light);
   }
   localStorage.setItem("darkMode", darkMode);
 }
 
 export function getDarkMode() {
-  return localStorage.getItem("darkMode") === DarkMode.Dark
-    ? DarkMode.Dark
-    : DarkMode.Light;
+  const localStorageDarkMode =
+    localStorage.getItem("darkMode") === DarkMode.Dark
+      ? DarkMode.Dark
+      : DarkMode.Light;
+  if (
+    !document.querySelector(":root")?.classList.contains(localStorageDarkMode)
+  ) {
+    throw new Error("LocalStorage and root darkMode setting does not match");
+  }
+  return localStorageDarkMode;
 }

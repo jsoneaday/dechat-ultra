@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        primary: "var(--color-bg-primary",
-        secondary: "var(--color-bg-secondary",
+        primary: "var(--color-bg-primary)",
+        secondary: "var(--color-bg-secondary)",
       },
       textColor: {
         accent: "var(--color-text-accent)",

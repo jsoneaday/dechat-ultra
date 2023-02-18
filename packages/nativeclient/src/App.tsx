@@ -9,6 +9,8 @@ import {
 import Layout from "./components/common/Layout";
 import Topics from "./components/screens/Topics";
 import Notifications from "./components/screens/Notifications";
+import { useEffect } from "react";
+import { DarkMode, getDarkMode, setDarkMode } from "./common/helpers/DarkMode";
 
 const router = createMemoryRouter(
   createRoutesFromElements(
@@ -21,6 +23,10 @@ const router = createMemoryRouter(
 );
 
 function App() {
+  useEffect(() => {
+    setDarkMode(DarkMode.Dark);
+  }, []);
+
   return (
     <RouterProvider router={router} fallbackElement={<div>FAILED!</div>} />
   );
