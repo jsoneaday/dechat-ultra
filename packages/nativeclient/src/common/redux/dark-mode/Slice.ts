@@ -1,19 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { DarkMode, getDarkMode } from "../../helpers/DarkMode";
 
-export enum DarkMode {
-  light = "light",
-  dark = "dark",
-}
+const currentDarkMode = getDarkMode();
 
-const currentDarkMode =
-  localStorage.getItem("darkMode") === "dark" ? DarkMode.dark : DarkMode.light;
-if (currentDarkMode === DarkMode.dark) {
-  document.documentElement.classList.add(DarkMode.dark);
-  document.documentElement.classList.remove(DarkMode.light);
-} else {
-  document.documentElement.classList.add(DarkMode.light);
-  document.documentElement.classList.remove(DarkMode.dark);
-}
 let initialState = currentDarkMode;
 
 export const darkModeSlice = createSlice({
