@@ -1,8 +1,8 @@
-import { expect, describe, it } from "vitest";
+import { expect, describe, it, beforeEach } from "vitest";
 import { DarkMode, getDarkMode, setDarkMode } from "./DarkMode";
 
 describe("Test darkMode helpers", () => {
-  setDarkMode(DarkMode.Dark);
+  beforeEach(() => setDarkMode(DarkMode.Dark));
 
   it("sets darkMode to light from dark", async () => {
     setDarkMode(DarkMode.Light);

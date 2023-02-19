@@ -16,14 +16,9 @@ export function setDarkMode(darkMode: DarkMode = DarkMode.Light) {
 }
 
 export function getDarkMode() {
-  const localStorageDarkMode =
-    localStorage.getItem("darkMode") === DarkMode.Dark
-      ? DarkMode.Dark
-      : DarkMode.Light;
-  if (
-    !document.querySelector(":root")?.classList.contains(localStorageDarkMode)
-  ) {
-    throw new Error("LocalStorage and root darkMode setting does not match");
-  }
-  return localStorageDarkMode;
+  const localStorageDarkMode = localStorage.getItem("darkMode");
+  if (!localStorageDarkMode) return localStorageDarkMode;
+  return localStorageDarkMode === DarkMode.Dark
+    ? DarkMode.Dark
+    : DarkMode.Light;
 }
