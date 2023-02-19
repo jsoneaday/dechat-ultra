@@ -4,4 +4,7 @@ export default {
   transform: {
     "^.+\\.(ts|tsx)?$": "ts-jest",
   },
+  moduleNameMapper: {
+    "\\.(css|less)$": "<rootDir>/src/__tests__/styleMock.js",
+  },
 };
