@@ -1,4 +1,4 @@
-import {} from "jest";
+import { expect, describe, it } from "vitest";
 import { DarkMode, getDarkMode, setDarkMode } from "./DarkMode";
 
 describe("Test darkMode helpers", () => {
