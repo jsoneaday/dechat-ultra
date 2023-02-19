@@ -15,5 +15,9 @@ describe("Test nav menus", () => {
     );
 
     render(<App router={router} />);
+
+    expect(screen.getByText("Home")).toBeInTheDocument();
+    expect(screen.getByText("Topics")).toBeInTheDocument();
+    expect(screen.getByText("Notifications")).toBeInTheDocument();
   });
 });
