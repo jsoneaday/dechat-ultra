@@ -1,11 +1,12 @@
 import "./App.css";
-import { createMemoryRouter, RouterProvider, Router } from "react-router-dom";
+import { RouterProvider, Router } from "react-router-dom";
 
 import { useEffect } from "react";
 import { DarkMode, setDarkMode } from "./common/helpers/DarkMode";
+import { RouterType } from "./components/common/Routing";
 
 interface AppProps {
-  router: ReturnType<typeof createMemoryRouter>;
+  router: RouterType;
 }
 
 function App({ router }: AppProps) {

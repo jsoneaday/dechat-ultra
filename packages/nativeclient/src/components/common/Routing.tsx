@@ -8,6 +8,8 @@ import Layout from "../common/Layout";
 import Topics from "../screens/Topics";
 import Notifications from "../screens/Notifications";
 
+export type RouterType = ReturnType<typeof createMemoryRouter>;
+
 const router = createMemoryRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
