@@ -1,8 +1,12 @@
 import React, { FC, ReactElement } from "react";
-import { useLocation } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
+import Layout from "../../components/common/Layout";
+import Home from "../../components/screens/Home";
+import Notifications from "../../components/screens/Notifications";
+import Topics from "../../components/screens/Topics";
 
-export const CurrentRoute: FC = () => {
+export const RouteDisplayComponent = () => {
   const location = useLocation();
 
-  return <>{}</>;
+  return <div>{`pathname: ${location.pathname}`}</div>;
 };

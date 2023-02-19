@@ -10,14 +10,19 @@ import Notifications from "../screens/Notifications";
 
 export type RouterType = ReturnType<typeof createMemoryRouter>;
 
-const router = createMemoryRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
-      <Route index element={<Home />} />
-      <Route path="/topics" element={<Topics />} />
-      <Route path="/notifications" element={<Notifications />} />
-    </Route>
-  )
+export enum RoutePaths {
+  Home = "home",
+  Topics = "topics",
+  Notifications = "notifications",
+}
+
+export const routes = (
+  <Route path="/" element={<Layout />}>
+    <Route index element={<Home />} />
+    <Route path="/topics" element={<Topics />} />
+    <Route path="/notifications" element={<Notifications />} />
+  </Route>
 );
+const router = createMemoryRouter(createRoutesFromElements(routes));
 
 export default router;
