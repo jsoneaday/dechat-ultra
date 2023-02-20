@@ -14,7 +14,7 @@ export default function Layout() {
       <div className="sm:max-2xl:col-span-2">
         <Outlet />
       </div>
-      {isMobile ? null : <div>Pops</div>}
+      {isMobile ? null : <div data-testid="popular-root">Pops</div>}
     </div>
   );
 }

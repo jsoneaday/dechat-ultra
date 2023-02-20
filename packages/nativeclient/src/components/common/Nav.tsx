@@ -4,7 +4,10 @@ const activeClassCss = "";
 
 export default function Nav() {
   return (
-    <nav className="flex flex-col justify-start items-start">
+    <nav
+      data-testid="nav-root"
+      className="flex flex-col justify-start items-start"
+    >
       <NavLink
         to="/"
         className={({ isActive }) => (isActive ? activeClassCss : undefined)}
