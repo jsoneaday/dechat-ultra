@@ -1,9 +1,12 @@
+import { FC } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Nav from "./Nav";
 
-const isMobile = false;
+export interface LayoutProps {
+  isMobile: boolean;
+}
 
-export default function Layout() {
+export default function Layout({ isMobile = false }: LayoutProps) {
   const location = useLocation();
   return (
     <div

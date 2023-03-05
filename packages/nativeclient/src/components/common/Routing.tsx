@@ -17,7 +17,7 @@ export enum RoutePaths {
 }
 
 export const routes = (
-  <Route path="/" element={<Layout />}>
+  <Route path="/" element={<Layout isMobile={false} />}>
     <Route index element={<Home />} />
     <Route path="/topics" element={<Topics />} />
     <Route path="/notifications" element={<Notifications />} />

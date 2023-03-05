@@ -5,19 +5,19 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { describe, it } from "vitest";
+import { describe, it, expect } from "vitest";
 import Layout from "./Layout";
 
 describe("Test Layout components", () => {
-  it("Verify each column is created for desktops", async () => {
+  it("verify only single column for mobile", async () => {
     const router = createMemoryRouter(
       createRoutesFromElements(
-        <Route path="/" element={<Layout isMobile={false} />} />
+        <Route path="/" element={<Layout isMobile={true} />} />
       )
     );
     render(<RouterProvider router={router} />);
     screen.getByTestId("layout-root");
-    screen.getByTestId("nav-root");
-    screen.getByTestId("popular-root");
+    expect(screen.queryByTestId("nav-root")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("popular-root")).not.toBeInTheDocument();
   });
 });
