@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from "../screens/Home";
-import Layout from "../common/Layout";
+import Layout, { DeviceSize } from "../common/Layout";
 import Topics from "../screens/Topics";
 import Notifications from "../screens/Notifications";
 
@@ -17,7 +17,7 @@ export enum RoutePaths {
 }
 
 export const routes = (
-  <Route path="/" element={<Layout isMobile={false} />}>
+  <Route path="/" element={<Layout deviceSize={DeviceSize.Desktop} />}>
     <Route index element={<Home />} />
     <Route path="/topics" element={<Topics />} />
     <Route path="/notifications" element={<Notifications />} />

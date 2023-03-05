@@ -6,13 +6,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { describe, it } from "vitest";
-import Layout from "./Layout";
+import Layout, { DeviceSize } from "./Layout";
 
 describe("Test Layout components", () => {
   it("Verify each column is created for desktops", async () => {
     const router = createMemoryRouter(
       createRoutesFromElements(
-        <Route path="/" element={<Layout isMobile={false} />} />
+        <Route path="/" element={<Layout deviceSize={DeviceSize.Desktop} />} />
       )
     );
     render(<RouterProvider router={router} />);

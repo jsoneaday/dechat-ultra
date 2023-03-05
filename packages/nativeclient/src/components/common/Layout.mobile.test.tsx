@@ -6,13 +6,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { describe, it, expect } from "vitest";
-import Layout from "./Layout";
+import Layout, { DeviceSize } from "./Layout";
 
 describe("Test Layout components", () => {
   it("verify only single column for mobile", async () => {
     const router = createMemoryRouter(
       createRoutesFromElements(
-        <Route path="/" element={<Layout isMobile={true} />} />
+        <Route path="/" element={<Layout deviceSize={DeviceSize.Mobile} />} />
       )
     );
     render(<RouterProvider router={router} />);
