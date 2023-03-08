@@ -1,6 +1,7 @@
 import "./App.css";
-import { RouterProvider, Router } from "react-router-dom";
-
+import { Provider as ReduxProvider } from "react-redux";
+import { RouterProvider } from "react-router-dom";
+import { store } from "./common/redux/Store";
 import { useEffect } from "react";
 import { DarkMode, getDarkMode, setDarkMode } from "./common/helpers/DarkMode";
 import { RouterType } from "./components/common/Routing";
@@ -18,7 +19,9 @@ function App({ router }: AppProps) {
   }, []);
 
   return (
-    <RouterProvider router={router} fallbackElement={<div>FAILED!</div>} />
+    <ReduxProvider store={store}>
+      <RouterProvider router={router} fallbackElement={<div>FAILED!</div>} />
+    </ReduxProvider>
   );
 }
 

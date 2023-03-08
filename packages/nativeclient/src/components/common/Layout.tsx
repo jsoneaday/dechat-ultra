@@ -1,11 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Nav from "./Nav";
-
-export enum DeviceSize {
-  Mobile, // 1 column
-  SmallDesktop, // 2 column
-  Desktop, // 3 column
-}
+import { DeviceSize } from "../../common/redux/device-size/DeviceSizeSlice";
 
 export interface LayoutProps {
   deviceSize: DeviceSize;

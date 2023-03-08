@@ -4,9 +4,10 @@ import {
   Route,
 } from "react-router-dom";
 import Home from "../screens/Home";
-import Layout, { DeviceSize } from "../common/Layout";
+import Layout from "../common/Layout";
 import Topics from "../screens/Topics";
 import Notifications from "../screens/Notifications";
+import { DeviceSize } from "../../common/redux/device-size/DeviceSizeSlice";
 
 export type RouterType = ReturnType<typeof createMemoryRouter>;
 

@@ -6,7 +6,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { describe, it, expect } from "vitest";
-import Layout, { DeviceSize } from "./Layout";
+import Layout from "./Layout";
+import { DeviceSize } from "../../common/redux/device-size/DeviceSizeSlice";
 
 describe("Test Layout components", () => {
   it("verify only single column for mobile", async () => {

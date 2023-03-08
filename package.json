@@ -7,7 +7,8 @@
   "scripts": {
     "nc:tauri": "cd packages/nativeclient && yarn run tauri dev",
     "nc:build": "cd packages/nativeclient && yarn run build",
-    "nc:test": "cd packages/nativeclient && yarn run test"
+    "nc:test": "cd packages/nativeclient && yarn run test",
+    "nc:coverage": "cd packages/nativeclient && yarn run coverage"
   },
   "devDependencies": {
     "typescript": "^4.9.5"
